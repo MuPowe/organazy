@@ -6,6 +6,8 @@
     <meta name="description"
           content="app, web app, responsive, admin, flat, flat ui, ui kit, off screen nav"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="js/fuelux/fuelux.css" type="text/css" />
+    <link rel="stylesheet" href="js/fullcalendar/fullcalendar.css" type="text/css" />
     <link rel="stylesheet" href="css/app.v2.css" type="text/css"/>
     <link rel="stylesheet" href="css/font.css" type="text/css" cache="false"/>
 <body>
@@ -61,12 +63,12 @@
                 </div> <!-- / user --> <!-- nav -->
                 <nav class="nav-primary hidden-xs">
                     <ul class="nav">
-                        <li class="active"><a href="index.html"> <i class="fa fa-eye"></i> <span>Discover</span> </a></li>
-                        <li><a href="mail.html"> <b class="badge bg-primary pull-right">3</b> <i class="fa fa-envelope-o"></i> <span>Известия</span> </a></li>
-                        <li><a href="tasks.html"> <i class="fa fa-book"></i> <span>Дневник</span> </a></li>
-                        <li><a href="tasks.html"> <i class="fa fa-tasks"></i> <span>Задачи</span> </a></li>
-                        <li><a href="notes.html"> <i class="fa fa-pencil"></i> <span>Бележки</span> </a></li>
-                        <li><a href="timeline.html"> <i class="fa fa-clock-o"></i> <span>Timeline</span> </a></li>
+                        <li class="active"><a href="index.php"> <i class="fa fa-eye"></i> <span>Discover</span> </a></li>
+                        <li><a href="notifications.php"> <b class="badge bg-primary pull-right">3</b> <i class="fa fa-envelope-o"></i> <span>Известия</span> </a></li>
+                        <li><a href="diary.php"> <i class="fa fa-book"></i> <span>Дневник</span> </a></li>
+                        <li><a href="tasks.php"> <i class="fa fa-tasks"></i> <span>Задачи</span> </a></li>
+                        <li><a href="calendar.php"> <i class="fa fa-pencil"></i> <span>Календар</span> </a></li>
+                        <li><a href="timeline.php"> <i class="fa fa-clock-o"></i> <span>Timeline</span> </a></li>
                     </ul>
                 </nav> <!-- / nav --> <!-- note -->
                <!-- <div class="bg-danger wrapper hidden-vertical animated fadeInUp text-sm"><a href="index.html#"

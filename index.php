@@ -19,20 +19,24 @@
                             </footer>
                         </section>
                         <div class="row">
-                            <h1></h1>
                             <div class="col-lg-6 col-sm-6">
                                 <section class="panel">
                                     <div class="panel-body">
                                         <div class="clearfix m-b">
                                             <small class="text-muted pull-right">преди 5мин.</small>
 
-                                            <div class="clear"><a href="index.html#"><strong>Важно!</strong></a>
+                                            <div class="clear">
+                                            <a href="#" class="thumb-sm pull-left m-r">
+                                                <i class="fa fa-exclamation-triangle fa-3x" style="color:orange" aria-hidden="true"></i>
+
+                                            </a>
+                                                <a href="index.html#"><strong>Важно</strong></a>
                                                 <small class="block text-muted">относно <a class="task-name">Organazy</a></small>
                                             </div>
                                         </div>
-                                        <p> Защитаване на курсов проект в Softuni </p>
-                                        <small class=""><a href="index.html#"><i class="fa fa-clock-o"></i> 01/06/2016 </a> - добавена</small>
 
+                                        <h4 >Защитаване на курсов проект в Softuni</h4>
+                                        <small class=""><a href="index.html#"><i class="fa fa-clock-o"></i> Краен Срок:  01/06/2016 14:53</a></small>
                                     </div>
                                     <footer class="panel-footer pos-rlt"><span class="arrow top"></span>
                                         <form class="pull-out"><input type="text"
@@ -47,13 +51,66 @@
                                         <div class="clearfix m-b">
                                             <small class="text-muted pull-right">преди 5мин.</small>
 
-                                            <div class="clear"><a href="index.html#"><strong>Напомняне</strong></a>
+                                            <div class="clear">
+                                                <a href="#" class="thumb-sm pull-left m-r"> <i class="fa fa-bell fa-3x" style="color:limegreen;" aria-hidden="true"></i></a>
+                                                <a href="index.html#"><strong>Напомняне</strong></a>
                                                 <small class="block text-muted">относно <a class="task-name">Organazy</a></small>
                                             </div>
                                         </div>
-                                        <p> Защитаване на курсов проект в Softuni </p>
-                                        <small class=""><a href="index.html#"><i class="fa fa-clock-o"></i> 01/06/2016 </a> - добавена</small>
 
+                                        <h4 >Защитаване на курсов проект в Softuni</h4>
+                                        <small class=""><a href="index.html#"><i class="fa fa-clock-o"></i> Краен Срок:  01/06/2016 14:53</a></small>
+                                    </div>
+                                    <footer class="panel-footer pos-rlt"><span class="arrow top"></span>
+                                        <form class="pull-out"><input type="text"
+                                                                      class="form-control no-border input-lg text-sm"
+                                                                      placeholder="Write a comment..."></form>
+                                    </footer>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <section class="panel">
+                                    <div class="panel-body">
+                                        <div class="clearfix m-b">
+                                            <small class="text-muted pull-right">преди 5мин.</small>
+
+                                            <div class="clear">
+                                                <a href="#" class="thumb-sm pull-left m-r">
+                                                    <i class="fa fa-exclamation-triangle fa-3x" style="color:darkgrey" aria-hidden="true"></i>
+
+                                                </a>
+                                                <a href="index.html#"><strong>Важно</strong></a>
+                                                <small class="block text-muted">относно <a class="task-name">Organazy</a></small>
+                                            </div>
+                                        </div>
+
+                                        <h4 >Защитаване на курсов проект в Softuni</h4>
+                                        <small class=""><a href="index.html#"><i class="fa fa-clock-o"></i> Краен Срок:  01/06/2016 14:53</a></small>
+                                    </div>
+                                    <footer class="panel-footer pos-rlt"><span class="arrow top"></span>
+                                        <form class="pull-out"><input type="text"
+                                                                      class="form-control no-border input-lg text-sm"
+                                                                      placeholder="Write a comment..."></form>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <section class="panel">
+                                    <div class="panel-body">
+                                        <div class="clearfix m-b">
+                                            <small class="text-muted pull-right">преди 5мин.</small>
+
+                                            <div class="clear">
+                                                <a href="#" class="thumb-sm pull-left m-r"> <i class="fa fa-tasks fa-3x" style="color:deepskyblue;" aria-hidden="true"></i></a>
+                                                <a href="index.html#"><strong>Напомняне</strong></a>
+                                                <small class="block text-muted">относно <a class="task-name">Organazy</a></small>
+                                            </div>
+                                        </div>
+
+                                        <h4 >Защитаване на курсов проект в Softuni</h4>
+                                        <small class=""><a href="index.html#"><i class="fa fa-clock-o"></i> Краен Срок:  01/06/2016 14:53</a></small>
                                     </div>
                                     <footer class="panel-footer pos-rlt"><span class="arrow top"></span>
                                         <form class="pull-out"><input type="text"
