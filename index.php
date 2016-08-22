@@ -171,7 +171,28 @@
 
                         <div class="text-center m-b"><i class="fa fa-spinner fa fa-spin"></i></div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-xs-2">
+
+
+                                <div class="panel bg-success ">
+                                    <div class="panel-body"><span class="timeline-icon"><i
+                                                class="fa fa-bell-o fa-2x time-icon bg-success"></i></span> <span
+                                            class=" h2 timeline-date">7:30</span> <h4><span>Wake up</span> Me
+                                        </h4>
+                                        <div class="m-t-sm timeline-action">
+                                            <span class="h2 pull-left m-r-sm">4:51</span> left
+                                            <span class="h2 pull-left m-r-sm">
+                                                <button class="btn btn-sm btn-white"><i class="fa fa-pause"></i> Пауза</button>
+                                                <button class="btn btn-sm btn-white"><i class="fa fa-times"></i> Спри</button>
+                                            </span>
+                                            <span></span>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                    </div>
+                    <div class="col-xs-2">
                         <section class="panel bg-info lter no-borders">
                             <div class="panel-body"><a class="pull-right" href="index.html#"><i
                                     class="fa fa-map-marker"></i></a> <span class="h4">McLean, VA</span>
@@ -192,6 +213,8 @@
                                 </div>
                             </footer>
                         </section>
+                    </div>
+                    <div class="col-lg-4">
                         <section class="panel" id="progressbar">
                             <header class="panel-heading">
                                 <ul class="nav nav-pills pull-right">
