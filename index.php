@@ -1,10 +1,21 @@
-<?php include('func/header.php'); ?>
+<?php
+session_start();
+if(isset($_GET['do']) == 'logout'){
+
+    session_destroy();
+    header("Refresh:0; url=signin.php");
+
+}
+if(isset($_SESSION['is_logged']) != TRUE) {
+    header("Refresh:0; url=signin.php");
+}else {;
+include('func/header.php');
+?>
     <section id="content">
         <section class="vbox">
             <header class="header bg-white b-b">
                 <p>
                     <?php
-
                     $mysqli = new mysqli("localhost", "root", "kurec321", "organazy");
 
                     /* check connection */
@@ -32,7 +43,8 @@
                     if ($result = $mysqli->query($query)) {
 
                         while ($row = $result->fetch_assoc()) {
-                            $msg = str_replace("%body%", "black", $row["msg"]);
+                            $msg = str_replace("=name=", $_SESSION['user_info']['f_name'], $row["msg"]);
+                            echo $msg;
                         }
 
                         /* free result set */
@@ -316,3 +328,4 @@
            data-target="#nav"></a></section> <!-- /.vbox --> </section>
 <script src="js/app.v2.js"></script> <!-- Bootstrap --> <!-- Sparkline Chart --> <!-- App --> </body>
 </html>
+<?php } ?>

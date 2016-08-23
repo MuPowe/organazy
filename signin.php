@@ -1,20 +1,8 @@
 <?php
 	include "func/config.php";
+    include "func/s-header.php";
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <title>Organazy - Уеб органайзер за вашето ежедневие</title>
-    <meta name="description"
-          content="app, web app, responsive, admin, flat, flat ui, ui kit, off screen nav"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <link rel="stylesheet" href="js/fuelux/fuelux.css" type="text/css" />
-    <link rel="stylesheet" href="js/fullcalendar/fullcalendar.css" type="text/css" />
-    <link rel="stylesheet" href="css/app.v2.css" type="text/css"/>
-    <link rel="stylesheet" href="css/font.css" type="text/css" cache="false"/>
-</head>
-   <body>
+
       <section id="content" class="m-t-lg wrapper-md animated fadeInUp">
          <a class="nav-brand" href="index.html">todo</a> 
          <div class="row m-n">
@@ -26,9 +14,8 @@
 					if(isset($_POST['submit'])){
 
 					   $username = trim(mysqli_real_escape_string($link,$_POST['username'])); 
-					   $password = trim(mysqli_real_escape_string($link,$_POST['password'])); 
-
-					   $sql1 = mysqli_query($link,"SELECT * FROM users_table WHERE user_name='$usr' LIMIT 1");
+					   $password = trim(mysqli_real_escape_string($link,$_POST['password']));
+                        $sql1 = mysqli_query($link,"SELECT * FROM users_table WHERE user_name='$username' LIMIT 1");
 					   $row2 = mysqli_fetch_assoc($sql1);
 					   $pass = $row2['password'];
 
@@ -60,12 +47,12 @@
                      <div class="form-group"> <label class="control-label">Потребителско име</label> <input type="text" name="username"placeholder="Username" class="form-control"> </div>
                      <div class="form-group"> <label class="control-label">Парола</label> <input type="password" name="password" id="inputPassword" placeholder="Password" class="form-control"> </div>
                      <div class="checkbox"> <label> <input type="checkbox"> Запомни ме </label> </div>
-                     <a href="signin.html#" class="pull-right m-t-xs"><small>Забравена парола?<small></a> <button type="submit" class="btn btn-info" name="submit">Вход</button> 
+                     <a href="signin.php#" class="pull-right m-t-xs"><small>Забравена парола?<small></a> <button type="submit" class="btn btn-info" name="submit">Вход</button>
                      <div class="line line-dashed"></div>
-                     <a href="signin.html#" class="btn btn-facebook btn-block m-b-sm"><i class="fa fa-facebook pull-left"></i>Sign in with Facebook</a> <a href="signin.html#" class="btn btn-twitter btn-block"><i class="fa fa-twitter pull-left"></i>Sign in with Twitter</a> 
+                     <a href="signin.php#" class="btn btn-facebook btn-block m-b-sm"><i class="fa fa-facebook pull-left"></i>Sign in with Facebook</a> <a href="signin.html#" class="btn btn-twitter btn-block"><i class="fa fa-twitter pull-left"></i>Sign in with Twitter</a>
                      <div class="line line-dashed"></div>
                      <p class="text-muted text-center"><small style="font-size: 13px;">Все още нямаш акаунт?</small></p>
-                     <a href="signup.html" class="btn btn-white btn-block">Регистрирай се</a> 
+                     <a href="signup.php" class="btn btn-white btn-block">Регистрирай се</a>
                   </form>
                </section>
             </div>

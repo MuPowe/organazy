@@ -1,20 +1,7 @@
 <?php
 	include "func/config.php";
+    include "func/s-header.php";
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <title>Organazy - Уеб органайзер за вашето ежедневие</title>
-    <meta name="description"
-          content="app, web app, responsive, admin, flat, flat ui, ui kit, off screen nav"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <link rel="stylesheet" href="js/fuelux/fuelux.css" type="text/css" />
-    <link rel="stylesheet" href="js/fullcalendar/fullcalendar.css" type="text/css" />
-    <link rel="stylesheet" href="css/app.v2.css" type="text/css"/>
-    <link rel="stylesheet" href="css/font.css" type="text/css" cache="false"/>
-</head>
-<body>
 	<section id="content" class="m-t-lg wrapper-md animated fadeInDown"> <a class="nav-brand" href="index.html">todo</a>
 		<div class="row m-n">
 			<div class="col-md-4 col-md-offset-4 m-t-lg">
@@ -57,7 +44,7 @@ if(isset($_POST['submit'])){
          $regdate = time())or die(mysql_error()); 
         $sql = mysqli_query($link,$query); 
 
-        header("Location: login.php"); 
+        header("Location: signin.php");
         exit; 
     } 
 } 

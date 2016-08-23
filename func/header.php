@@ -76,7 +76,7 @@
                                                                                             class="pull-right m-r-n-sm m-t-n-sm"><i
                         class="fa fa-times"></i></a> Добър вечер, Бачи Колю.
                 </div> <!-- / note --> </section>
-            <footer class="footer bg-gradient hidden-xs"><a href="modal.lockme.html" data-toggle="ajaxModal"
+            <footer class="footer bg-gradient hidden-xs"><a href="modal.lockme.php?id=<?php $_SESSION['user_info']['id'];?>" data-toggle="ajaxModal"
                                                             class="btn btn-sm btn-link m-r-n-xs pull-right"> <i
                     class="fa fa-power-off"></i> </a> <a href="index.html#nav" data-toggle="class:nav-vertical"
                                                          class="btn btn-sm btn-link m-l-n-sm"> <i
