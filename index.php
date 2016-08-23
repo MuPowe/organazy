@@ -1,7 +1,46 @@
 <?php include('func/header.php'); ?>
     <section id="content">
         <section class="vbox">
-            <header class="header bg-white b-b"><p>Добър вечер, Бачи Колю!</p></header>
+            <header class="header bg-white b-b">
+                <p>
+                    <?php
+
+                    $mysqli = new mysqli("localhost", "root", "kurec321", "organazy");
+
+                    /* check connection */
+                    if ($mysqli->connect_errno) {
+                        printf("Connect failed: %s\n", $mysqli->connect_error);
+                        exit();
+                    }
+
+                    $time = date("H");
+
+                    if ($time > "4" && $time < "12" ) {
+                        $type = 1;
+                    } else
+                        if ($time >= "12" && $time < "17") {
+                            $type = 2;
+                        } else
+                            if ($time >= "17" && $time < "19") {
+                                $type = 3;
+                            }
+                                if ($time >= "19") {
+                                    $type = 4;
+                                }
+                                else $type = 5;
+                    $query = 'SELECT * FROM dailymsg WHERE type = '.$type.' LIMIT 1';
+                    if ($result = $mysqli->query($query)) {
+
+                        while ($row = $result->fetch_assoc()) {
+                            $msg = str_replace("%body%", "black", $row["msg"]);
+                        }
+
+                        /* free result set */
+                        $result->free();
+                    }
+                    ?>
+                </p>
+            </header>
             <section class="scrollable wrapper">
                 <div class="row">
                     <div class="col-lg-8">
