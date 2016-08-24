@@ -18,38 +18,51 @@ include('func/header.php');
                     <?php
                     $mysqli = new mysqli("localhost", "root", "kurec321", "organazy");
 
-                    /* check connection */
                     if ($mysqli->connect_errno) {
                         printf("Connect failed: %s\n", $mysqli->connect_error);
                         exit();
                     }
 
                     $time = date("H");
-
-                    if ($time > "4" && $time < "12" ) {
-                        $type = 1;
-                    } else
-                        if ($time >= "12" && $time < "17") {
-                            $type = 2;
-                        } else
-                            if ($time >= "17" && $time < "19") {
-                                $type = 3;
-                            }
-                                if ($time >= "19") {
-                                    $type = 4;
-                                }
-                                else $type = 5;
-                    $query = 'SELECT * FROM dailymsg WHERE type = '.$type.' LIMIT 1';
+                    $message = array(0,0,0,0,0,0,0);
+                    $type = 0;
+                    $query = 'SELECT * FROM users_table WHERE id = '.$_SESSION['user_info']['id'].' LIMIT 1';
                     if ($result = $mysqli->query($query)) {
 
-                        while ($row = $result->fetch_assoc()) {
-                            $msg = str_replace("=name=", $_SESSION['user_info']['f_name'], $row["msg"]);
-                            echo $msg;
+                        $user_info = $result->fetch_assoc();
+                        $result->free();
+
+                        if ($time > "4" && $time < "12" && $user_info['type_1'] == 0) {
+                            $type = 1;
+                            $message[1] = 1;
+
+                        } elseif ($time >= "12" && $time < "17" && $user_info['type_2'] == 0) {
+                            $type = 2;
+                            $message[2] = 1;
+                        } elseif ($time >= "17" && $time < "19" && $user_info['type_3'] == 0) {
+                            $type = 3;
+                            $message[3] = 1;
+                        } elseif ($time >= "19" && $user_info['type_4'] == 0) {
+                            $type = 4;
+                            $message[4] = 1;
                         }
 
-                        /* free result set */
-                        $result->free();
+                        $query = 'SELECT * FROM dailymsg WHERE type = '.$type.' LIMIT 1';
+                        if ($result1 = $mysqli->query($query)) {
+
+                            while ($row = $result1->fetch_assoc()) {
+                                $msg = str_replace("=name=", $_SESSION['user_info']['f_name'], $row["msg"]);
+                                echo $msg;
+                            }
+                            $result1->free();
+                        }
+
+                        $update_views = 'UPDATE users_table SET type_'.$type.' = '.$message[$type].' WHERE id = '.$_SESSION['user_info']['id'];
+                        $update_views = $mysqli->query($update_views);
+
                     }
+
+
                     ?>
                 </p>
             </header>
