@@ -16,72 +16,37 @@ include('func/header.php');
             <header class="header bg-white b-b">
                 <p>
                     <?php
-                    $mysqli = new mysqli("localhost", "root", "kurec321", "organazy");
-
-                    if ($mysqli->connect_errno) {
-                        printf("Connect failed: %s\n", $mysqli->connect_error);
-                        exit();
-                    }
-
-                    $time = date("H");
-                    $message = array(0,0,0,0,0,0,0);
-                    $type = 0;
-                    $query = 'SELECT * FROM users_table WHERE id = '.$_SESSION['user_info']['id'].' LIMIT 1';
-                    if ($result = $mysqli->query($query)) {
-
-                        $user_info = $result->fetch_assoc();
-                        $result->free();
-
-                        if ($time > "4" && $time < "12" && $user_info['type_1'] == 0) {
-                            $type = 1;
-                            $message[1] = 1;
-
-                        } elseif ($time >= "12" && $time < "17" && $user_info['type_2'] == 0) {
-                            $type = 2;
-                            $message[2] = 1;
-                        } elseif ($time >= "17" && $time < "19" && $user_info['type_3'] == 0) {
-                            $type = 3;
-                            $message[3] = 1;
-                        } elseif ($time >= "19" && $user_info['type_4'] == 0) {
-                            $type = 4;
-                            $message[4] = 1;
-                        }
-
-                        $query = 'SELECT * FROM dailymsg WHERE type = '.$type.' LIMIT 1';
-                        if ($result1 = $mysqli->query($query)) {
-
-                            while ($row = $result1->fetch_assoc()) {
-                                $msg = str_replace("=name=", $_SESSION['user_info']['f_name'], $row["msg"]);
-                                echo $msg;
-                            }
-                            $result1->free();
-                        }
-
-                        $update_views = 'UPDATE users_table SET type_'.$type.' = '.$message[$type].' WHERE id = '.$_SESSION['user_info']['id'];
-                        $update_views = $mysqli->query($update_views);
-
-                    }
-
-
+                    echo dailyMessage();
                     ?>
                 </p>
             </header>
             <section class="scrollable wrapper">
                 <div class="row">
                     <div class="col-lg-8">
-                        <section class="panel">
-                            <form><textarea class="form-control input-lg no-border" rows="2"
-                                            placeholder="Добавете бърза бележка..."></textarea></form>
-                            <footer class="panel-footer bg-light lter">
-                                <button class="btn btn-info pull-right">Добави</button>
-                                <ul class="nav nav-pills">
-                                    <li><a href="index.html#"><i class="fa fa-location-arrow"></i></a></li>
-                                    <li><a href="index.html#"><i class="fa fa-camera"></i></a></li>
-                                    <li><a href="index.html#"><i class="fa fa-video-camera"></i></a></li>
-                                    <li><a href="index.html#"><i class="fa fa-microphone"></i></a></li>
-                                </ul>
-                            </footer>
-                        </section>
+                        <div ng-controller="formCtrl">
+
+                            <section class="panel">
+
+                                    <form name="userForm">
+                                        <textarea class="form-control input-lg no-border" ng-model="msg"  rows="2" placeholder="Добавете бърза бележка..." required></textarea>
+
+                                        <input type="hidden" ng-model="id" name="id" value="<?php echo $_SESSION['user_info']['id']; ?>" required/>
+                                    </form>
+                                    <footer class="panel-footer bg-light lter">
+                                        <button type="submit" ng-click="formsubmit(userForm.$valid)"  ng-disabled="userForm.$invalid" class="btn btn-info pull-right">Добави</button>
+                                        <ul class="nav nav-pills">
+                                            <li><a href="index.html#"><i class="fa fa-location-arrow"></i></a></li>
+                                            <li><a href="index.html#"><i class="fa fa-camera"></i></a></li>
+                                            <li><a href="index.html#"><i class="fa fa-video-camera"></i></a></li>
+                                            <li><a href="index.html#"><i class="fa fa-microphone"></i></a></li>
+                                        </ul>
+                                    </footer>
+
+                            </section>
+                            <pre ng-model="result">
+                                {{result}}
+                            </pre>
+                        </div>
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <section class="panel">

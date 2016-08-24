@@ -1,11 +1,17 @@
+<?php
+include('func/config.php');
+include('func/functions.php');
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="todo"lang="en">
 <head>
     <meta charset="utf-8"/>
     <title>Organazy - Уеб органайзер за вашето ежедневие</title>
-    <meta name="description"
-          content="app, web app, responsive, admin, flat, flat ui, ui kit, off screen nav"/>
+    <meta name="description" content="app, web app, responsive, admin, flat, flat ui, ui kit, off screen nav"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/angular.min.js" ></script>
+    <script src="js/process.js"></script>
     <link rel="stylesheet" href="js/fuelux/fuelux.css" type="text/css" />
     <link rel="stylesheet" href="js/fullcalendar/fullcalendar.css" type="text/css" />
     <link rel="stylesheet" href="css/app.v2.css" type="text/css"/>

@@ -3,43 +3,7 @@
         <section class="vbox">
             <header class="header bg-white b-b">
                 <p>
-                    <?php
-                    $mysqli = new mysqli("localhost", "root", "xSy0knewpass", "organazy");
 
-                    if ($mysqli->connect_errno) {
-                        printf("Connect failed: %s\n", $mysqli->connect_error);
-                        exit();
-                    }
-
-                    $query = "SELECT * FROM  ORDER by ID DESC LIMIT 50,5";
-
-                    if ($result = $mysqli->query($query)) {
-
-                        /* fetch associative array */
-                        while ($row = $result->fetch_assoc()) {
-                            printf ("%s (%s)\n", $row["Name"], $row["CountryCode"]);
-                        }
-
-                        /* free result set */
-                        $result->free();
-                    }
-
-                    $time = date("H");
-                    $timezone = date("e");
-                    if ($time < "12") {
-                        echo "Good morning";
-                    } else
-                        if ($time >= "12" && $time < "17") {
-                            echo "Good afternoon";
-                        } else
-                            if ($time >= "17" && $time < "19") {
-                                echo "Good evening";
-                            } else
-                                if ($time >= "19") {
-                                    echo "Good night";
-                                }
-
-                    ?>
                 </p>
             </header>
             <section class="scrollable wrapper">
