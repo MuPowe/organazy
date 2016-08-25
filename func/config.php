@@ -2,7 +2,7 @@
 
 define("DBHOST", "localhost");
 define("DBUSER", "root");
-define("DBPASS", "kurec321");
+define("DBPASS", "123456we");
 define("DBDB", "organazy");
 
 $link = mysqli_connect(DBHOST,DBUSER, DBPASS, DBDB);
