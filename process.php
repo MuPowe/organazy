@@ -1,25 +1,18 @@
 <?php
-
-define("DBHOST", "localhost");
-define("DBUSER", "root");
-define("DBPASS", "kurec321");
-define("DBDB", "organazy");
-
-$mysqli = new mysqli(DBHOST,DBUSER, DBPASS, DBDB);
-
-if ($mysqli->connect_errno) {
-    printf("Connect failed: %s\n", $mysqli->connect_error);
-    exit();
-}
-
+include('func/config.php');
 
 $post_date = file_get_contents("php://input");
 $data = json_decode($post_date);
 
 
-echo "Msg : ".$data->msg."n";
-echo "Id : ".$data->id."n";
-
+echo '
+<div ng-controller="" >
+      <div class="alert alert-info" id="div2">
+        <i class="fa fa-info-sign"></i><strong>
+        Heads up!</strong> This <a href="components.html#" class="alert-link">alert needs your attention</a>, but it\'s not super important.
+      </div>
+</div>
+';
 
 
 ?>

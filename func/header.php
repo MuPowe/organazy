@@ -11,6 +11,8 @@ include('func/functions.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/angular.min.js" ></script>
+    <script src="js/angular-sanitize.min.js" ></script>
+    <script src="js/angular-animate.min.js" ></script>
     <script src="js/process.js"></script>
     <link rel="stylesheet" href="js/fuelux/fuelux.css" type="text/css" />
     <link rel="stylesheet" href="js/fullcalendar/fullcalendar.css" type="text/css" />

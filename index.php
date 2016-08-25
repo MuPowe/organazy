@@ -29,8 +29,7 @@ include('func/header.php');
 
                                     <form name="userForm">
                                         <textarea class="form-control input-lg no-border" ng-model="msg"  rows="2" placeholder="Добавете бърза бележка..." required></textarea>
-
-                                        <input type="hidden" ng-model="id" name="id" value="<?php echo $_SESSION['user_info']['id']; ?>" required/>
+                                        <input type="hidden" name="id" ng-init="id=<?php echo 5;//$_SESSION['user_info']['id']; ?>;" ng-value="id"/>
                                     </form>
                                     <footer class="panel-footer bg-light lter">
                                         <button type="submit" ng-click="formsubmit(userForm.$valid)"  ng-disabled="userForm.$invalid" class="btn btn-info pull-right">Добави</button>
@@ -43,9 +42,9 @@ include('func/header.php');
                                     </footer>
 
                             </section>
-                            <pre ng-model="result">
+                            <div ng-model="result" ng-bind-html="result">
                                 {{result}}
-                            </pre>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
