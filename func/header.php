@@ -42,7 +42,7 @@ include('func/functions.php');
                             </a></li>
                             <li class="divider"></li>
                             <li><a href="docs.html">Помощ</a></li>
-                            <li><a href="signin.html">Изход</a></li>
+                            <li><a href="?do=logout">Изход</a></li>
                         </ul>
                         <div class="visible-xs m-t m-b"><a href="index.html#" class="h3">Кичко Петков</a>
                             <p><i class="fa fa-map-marker"></i> София, България</p></div>

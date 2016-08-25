@@ -23,7 +23,12 @@
 
 					        session_start(); 
 					        $_SESSION['user_info'] = $row2; 
-					        $_SESSION['is_logged'] = TRUE; 
+					        $_SESSION['is_logged'] = TRUE;
+                  if (isset($_POST['remember_me'])) {
+                    $params = session_get_cookie_params();
+                    setcookie(session_name(), $_COOKIE[session_name()], time() + 60 * 60 * 24 * 30, $params["path"], $params["domain"], 
+                    $params["secure"], $params["httponly"]);
+                  } 
 					        header("Location: index.php"); 
 					        exit; 
 					          
@@ -46,7 +51,7 @@
                   <form action="" method="POST" class="panel-body">
                      <div class="form-group"> <label class="control-label">Потребителско име</label> <input type="text" name="username"placeholder="Username" class="form-control"> </div>
                      <div class="form-group"> <label class="control-label">Парола</label> <input type="password" name="password" id="inputPassword" placeholder="Password" class="form-control"> </div>
-                     <div class="checkbox"> <label> <input type="checkbox"> Запомни ме </label> </div>
+                     <div class="checkbox"> <label> <input type="checkbox" name="remember_me"> Запомни ме </label> </div>
                      <a href="signin.php#" class="pull-right m-t-xs"><small>Забравена парола?<small></a> <button type="submit" class="btn btn-info" name="submit">Вход</button>
                      <div class="line line-dashed"></div>
                      <a href="signin.php#" class="btn btn-facebook btn-block m-b-sm"><i class="fa fa-facebook pull-left"></i>Sign in with Facebook</a> <a href="signin.html#" class="btn btn-twitter btn-block"><i class="fa fa-twitter pull-left"></i>Sign in with Twitter</a>
