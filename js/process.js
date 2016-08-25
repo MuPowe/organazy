@@ -8,12 +8,13 @@ app.controller("formCtrl", ['$scope', '$http', function($scope, $http) {
 
         if (isValid) {
 
-            $http.post($scope.url, {"msg": $scope.msg, "id": $scope.id}).
+            $http.post($scope.url, {"msg": $scope.msg, "id": $scope.id, "type": $scope.type}).
             success(function(data, status) {
                 console.log(data);
                 $scope.status = status;
                 $scope.data = data;
                 $scope.result = data;
+
             })
         }else{
             alert('Form is not valid');

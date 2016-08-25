@@ -29,10 +29,11 @@ include('func/header.php');
 
                                     <form name="userForm">
                                         <textarea class="form-control input-lg no-border" ng-model="msg"  rows="2" placeholder="Добавете бърза бележка..." required></textarea>
-                                        <input type="hidden" name="id" ng-init="id=<?php echo 5;//$_SESSION['user_info']['id']; ?>;" ng-value="id"/>
+                                        <input type="hidden" name="id" ng-init="id=<?php echo $_SESSION['user_info']['id']; ?>;" ng-value="id"/>
+                                        <input type="hidden" name="type" ng-init="type=1" ng-value="type"/>
                                     </form>
                                     <footer class="panel-footer bg-light lter">
-                                        <button type="submit" ng-click="formsubmit(userForm.$valid)"  ng-disabled="userForm.$invalid" class="btn btn-info pull-right">Добави</button>
+                                        <button type="submit" ng-click="formsubmit(userForm.$valid);userForm.$setPristine();userForm.$setUntouched()"  ng-disabled="userForm.$invalid" class="btn btn-info pull-right">Добави</button>
                                         <ul class="nav nav-pills">
                                             <li><a href="index.html#"><i class="fa fa-location-arrow"></i></a></li>
                                             <li><a href="index.html#"><i class="fa fa-camera"></i></a></li>

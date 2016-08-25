@@ -2,28 +2,25 @@
 include('func/config.php');
 $mysqli = new mysqli(DBHOST,DBUSER, DBPASS, DBDB);
 
-
-
 $post_date = file_get_contents("php://input");
 $data = json_decode($post_date);
+$now = new DateTime();
+if($data->type == 1) {
 
-$query = 'INSERT INTO `notes` (`id`, `usr_id`, `note`, `type`, `created`, `expired`, `project_id`) VALUES (NULL, \'1\', \'Да не забравя да забравя всичко!\', \'1\', \'\', \'\', \'1\');';
-if ($result = $mysqli->query($query)) {
+    $query = 'INSERT INTO `notes` (`id`, `usr_id`, `note`, `type`, `created`, `expired`, `project_id`) VALUES (NULL, \''.$data->id.'\', \''.$data->msg.'\', \'1\', \''.$now->format('Y-m-d H:i:s').'\', \'\', \'1\');';
+    if ($result = $mysqli->query($query)) {
+        echo '
+            <div ng-controller="" >
+                  <div class="alert alert-info" id="div2">
+                    Бележката беше добавена успешно! 
+                  </div>
+            </div>  <script>location.reload();</script>
+            ';
 
-    $user_info = $result->fetch_assoc();
-    $result->free();
+    } else {
+        echo $mysqli->error;
+    }
+
+
 }
-
-
-
-echo '
-<div ng-controller="" >
-      <div class="alert alert-info" id="div2">
-        
-        <?php echo $data->id; ?>
-      </div>
-</div>
-';
-
-
 ?>
