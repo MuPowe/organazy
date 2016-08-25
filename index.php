@@ -39,6 +39,16 @@ include('func/header.php');
                                             <li><a href="index.html#"><i class="fa fa-camera"></i></a></li>
                                             <li><a href="index.html#"><i class="fa fa-video-camera"></i></a></li>
                                             <li><a href="index.html#"><i class="fa fa-microphone"></i></a></li>
+                                            <li class="dropdown"><a href="components.html#" class="dropdown-toggle"
+                                                                    data-toggle="dropdown"><i
+                                                        class="fa fa-cog text-default"></i> Тип <b class="caret"></b></a>
+                                                <ul class="dropdown-menu text-left">
+                                                    <li><a href="components.html#dropdown1" data-toggle="tab"><i class="fa fa-exclamation-triangle"></i> Важна</a></li>
+                                                    <li><a href="components.html#dropdown1" data-toggle="tab"><i class="fa fa-bell"></i> Напомняне</a></li>
+                                                    <li><a href="components.html#dropdown1" data-toggle="tab"><i class="fa fa-exclamation-triangle"></i> Задача</a></li>
+                                                    <li><a href="components.html#dropdown1" data-toggle="tab"><i class="fa-sticky-note "></i> Бележка</a></li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </footer>
 
